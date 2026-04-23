@@ -106,6 +106,13 @@ public class BusTicketBookingSystem {
         ArrayList<Bus> buses = new ArrayList<>();
         buses.add(new Bus("APSRTC", "1234", "Anantapur", "Tirupathi", 50, 50, 120));
         buses.add(new Bus("INDRA", "5678", "Hyderabad", "Bangalore", 60, 60, 500));
+        buses.add(new Bus("INDRA", "0411", "Hyderabad", "Bangalore", 60, 60, 500));
+       buses.add(new Bus("APSRTC", "5556", "Dharmavaram", "Bangalore", 60, 60, 500));
+       buses.add(new Bus("APSRTC", "1414", "Hyderabad", "Bangalore", 60, 60, 500));
+       buses.add(new Bus("INDRA", "7906", "Hyderabad", "Bangalore", 60, 60, 500));
+       buses.add(new Bus("APSRTC", "8114", "Tirupathi", "Bangalore", 60, 60, 500));
+        buses.add(new Bus("INDRA", "9885", "Anantapur", "Bangalore", 60, 60, 500));
+
 
         HashMap<String, User> userMap = new HashMap<>();
         userMap.put("MasthanSanjay", new User("MasthanSanjay", "MS@2005"));
