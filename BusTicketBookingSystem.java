@@ -88,6 +88,14 @@ class Booking {
         System.out.println("Seats      : " + seat);
         System.out.println("Total Cost : " + totalCost);
     }
+
+    public String getBusNumber() {
+        return busNumber;
+    }
+
+    public int getSeat() {
+        return seat;
+    }
 }
 
 public class BusTicketBookingSystem {
@@ -162,7 +170,28 @@ public class BusTicketBookingSystem {
             }
         }
 
-        for (Booking bk : bookings) {
+ System.out.print("Do you want to cancel  ticket  (yes/no): ");
+        sc.nextLine(); 
+        String cancel = sc.nextLine();
+
+        if (cancel.equalsIgnoreCase("yes")) {
+
+            if (!bookings.isEmpty()) {
+                Booking last = bookings.get(bookings.size() - 1);
+
+                for (Bus b : buses) {
+                    if (b.getBusNum().equalsIgnoreCase(last.getBusNumber())) {
+                        b.setAvailableSeat(b.getAvailableSeat() + last.getSeat());
+                    }
+                }
+
+                bookings.remove(bookings.size() - 1);
+                System.out.println("Last ticket cancelled ");
+            } else {
+                System.out.println("No bookings found ");
+            }
+        }
+       for (Booking bk : bookings) {
             bk.viewTicket();
         }
 
